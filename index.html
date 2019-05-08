@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Project</title>
+        <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="text/babel">
+            
+            const NamesList = [
+        
+                {id: 1, name:'Moshe', age:20},
+                {id: 2, name:'yossi', age:21},
+                {id: 3, name:'david', age:22}
+
+            ]
+          
+            const App = ({names}) => (
+                <ul>
+                    {names.map((person, i) =>
+                    <li key={i}> {person.id} {person.name} {person.age}</li>
+                    )}</ul>
+            )   
+
+            ReactDOM.render(
+                <App names={NamesList} />,
+                document.getElementById("root")
+            );
+        </script>
+    </body>
+</html>
